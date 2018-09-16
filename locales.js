@@ -738,6 +738,29 @@
 
 
 (function() {
+        numeral.register('locale', 'sv-se', {
+        delimiters: {
+            thousands: ' ',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 'k',
+            million: 'm',
+            billion: 'md',
+            trillion: 'bn'
+        },
+        ordinal: function (number) {
+            var b = number % 10;
+            return ~~(number % 100 / 10) === 1 ? ':a' : b === 1 ? ':a' : b === 2 ? ':a' : b === 3 ? ':e' : ':e';
+        },
+        currency: {
+          symbol: 'SKR'
+        }
+    });
+})();
+
+
+(function() {
     
 
     numeral.register('locale', 'th', {
@@ -864,26 +887,6 @@
     });
 })();
 
-(function() {
-        numeral.register('locale', 'zh-tw', {
-        delimiters: {
-            thousands: ',',
-            decimal: '.'
-        },
-        abbreviations: {
-            thousand: '千',
-            million: '百万',
-            billion: '十億',
-            trillion: '兆'
-        },
-        ordinal: function (number) {
-            return '.';
-        },
-        currency: {
-            symbol: 'NT$'
-        }
-    });
-})();
 
 (function() {
         numeral.register('locale', 'zh-cn', {
@@ -902,6 +905,28 @@
         },
         currency: {
             symbol: '¥'
+        }
+    });
+})();
+
+
+(function() {
+        numeral.register('locale', 'zh-tw', {
+        delimiters: {
+            thousands: ',',
+            decimal: '.'
+        },
+        abbreviations: {
+            thousand: '千',
+            million: '百万',
+            billion: '十億',
+            trillion: '兆'
+        },
+        ordinal: function (number) {
+            return '.';
+        },
+        currency: {
+            symbol: 'NT$'
         }
     });
 })();
