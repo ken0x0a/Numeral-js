@@ -1,0 +1,54 @@
+extends:
+  - ./tslint.base.yml
+# https://palantir.github.io/tslint/rules/
+rules:
+  no-implicit-dependencies: [true, [
+    # Workspace
+    '@cacicolle/i18n',
+    '@cacicolle/validations',
+    '@cacicolle/comps',
+    '@cacicolle/const',
+    '@plusuno/utils',
+    # 
+    "@assets",
+    "@src",
+    "@cacicolle/logger",
+    "@cacicolle/auth",
+    "tab-view",
+    "react-native-header-tab-view",
+    "@storybook", "@story",
+    "@web",
+
+    # react-navigation
+    "react-native-safe-area-view",
+    "react-navigation-stack",
+
+    # Expo
+    "react-native-svg",
+    "react-native-vector-icons",
+    "react-native-gesture-handler",
+    "react-native-screens",
+    "react-native-reanimated",
+    "react-native-sentry",
+
+    "hoist-non-react-statics",
+
+    # apollo
+    "apollo-cache",
+
+    # devDependencies
+    "detox",
+    "detox-expo-helpers",
+    "react-test-renderer"
+  ]]
+  no-submodule-imports: [true,
+    "@src",
+    "detox",
+    "moment",
+    "numeral",
+    "react-native-vector-icons",
+    "@cacicolle",
+    "@plusuno",
+    "@storybook", "@story",
+    "@assets"
+  ]
